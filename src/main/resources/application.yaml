@@ -1,0 +1,22 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: blog-service
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/hospital?characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 10
+  #配置自动建表：updata:没有表新建，有表更新操作,控制台显示建表语句
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+logging:
+  level:
+    com.example.mapper: debug
+
