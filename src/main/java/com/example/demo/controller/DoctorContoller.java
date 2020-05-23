@@ -66,7 +66,7 @@ public class DoctorContoller {
 
     @RequestMapping(value = "/getDoctList", method = RequestMethod.POST)
     @ResponseBody
-    public Result getUserList(Integer page, Integer row, Doctor doctor) {
+    public Result getUserList(@RequestParam(defaultValue = "1") Integer page, @RequestParam(defaultValue = "10")Integer row, Doctor doctor) {
         try {
             PageInfo<Doctor> doctorList = doctorService.getDoctorList(page, row, doctor);
             return Result.ok(doctorList);

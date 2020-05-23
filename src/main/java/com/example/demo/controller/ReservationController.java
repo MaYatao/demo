@@ -35,7 +35,7 @@ public class ReservationController {
 
     @RequestMapping(value = "/getDeptList", method = RequestMethod.POST)
     @ResponseBody
-    public Result getDeptList(Integer page, Integer row, Reservation reservation) {
+    public Result getDeptList(@RequestParam(defaultValue = "1") Integer page, @RequestParam(defaultValue = "10")Integer row, Reservation reservation) {
         try {
             PageInfo<Reservation> doctorList = reservationService.getDeptList(page, row, reservation);
             return Result.ok(doctorList);

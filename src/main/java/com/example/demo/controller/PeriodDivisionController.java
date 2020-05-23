@@ -35,7 +35,7 @@ public class PeriodDivisionController {
 
     @RequestMapping(value = "/getPdList", method = RequestMethod.POST)
     @ResponseBody
-    public Result getDeptList(Integer page, Integer row, PeriodDivision periodDivision) {
+    public Result getDeptList(@RequestParam(defaultValue = "1") Integer page, @RequestParam(defaultValue = "10")Integer row, PeriodDivision periodDivision) {
         try {
             PageInfo<PeriodDivision> doctorList = periodDivisionService.getPDtList(page, row, periodDivision);
             return Result.ok(doctorList);

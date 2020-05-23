@@ -36,7 +36,7 @@ public class DepartmentContoller {
 
     @RequestMapping(value = "/getDeptList", method = RequestMethod.POST)
     @ResponseBody
-    public Result getDeptList(Integer page, Integer row, Department department) {
+    public Result getDeptList(@RequestParam(defaultValue = "1") Integer page, @RequestParam(defaultValue = "10")Integer row, Department department) {
         try {
             PageInfo<Department> doctorList = departmentService.getDeptList(page, row, department);
             return Result.ok(doctorList);
