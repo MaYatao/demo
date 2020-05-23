@@ -51,7 +51,7 @@ public class PreUser {
     /**
      * 患者性别，默认为false-男
      */
-    private Boolean sex = false;
+    private Boolean sex ;
 
     /**
      * 患者身份证号
@@ -68,7 +68,7 @@ public class PreUser {
     /**
      * 患者状态
      */
-    private Integer state = 0;
+    private Integer state ;
 
 
 }
