@@ -16,5 +16,5 @@ public interface PreUserService {
 
     PreUser getById(Integer userId);
 
-    PageInfo<PreUser> getUserList(Integer page, Integer row);
+    PageInfo<PreUser> getUserList(Integer page, Integer row, PreUser user);
 }

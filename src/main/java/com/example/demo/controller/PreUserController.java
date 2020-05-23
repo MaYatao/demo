@@ -5,6 +5,7 @@ import com.example.demo.pojo.PreUser;
 import com.example.demo.service.PreUserService;
 import com.example.demo.until.Result;
 import com.github.pagehelper.PageInfo;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,7 +26,7 @@ public class PreUserController {
         } catch (Exception e) {
             return Result.build(500, e.getMessage());
         }
-        return Result.ok("修改成功");
+        return Result.ok("添加成功");
     }
 
     @PostMapping("/edit")
@@ -72,10 +73,10 @@ public class PreUserController {
 
     @RequestMapping(value = "/getUserList", method = RequestMethod.POST)
     @ResponseBody
-    public Result getUserList(Integer page, Integer row) {
+    public Result getUserList(@RequestParam(defaultValue = "1") Integer page, @RequestParam(defaultValue = "10")Integer row,PreUser  user) {
 
         try {
-            PageInfo<PreUser> userList = preUserService.getUserList(page, row);
+            PageInfo<PreUser> userList = preUserService.getUserList(page, row,user);
             return Result.ok(userList);
         } catch (Exception e) {
             return Result.build(500, e.getMessage());

@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8090
 spring:
   application:
     name: blog-service
@@ -7,7 +7,7 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/hospital?characterEncoding=UTF-8&useSSL=false
     username: root
     password: 123456
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: com.mysql.jdbc.Driver
     hikari:
       maximum-pool-size: 20
       minimum-idle: 10
@@ -18,5 +18,5 @@ spring:
     show-sql: true
 logging:
   level:
-    com.example.mapper: debug
+    com.example.demo.mapper: debug
 

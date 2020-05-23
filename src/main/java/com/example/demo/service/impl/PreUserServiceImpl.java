@@ -56,8 +56,8 @@ public class PreUserServiceImpl implements PreUserService {
     }
 
     @Override
-    public PageInfo<PreUser> getUserList(Integer page, Integer row) {
-        List<PreUser> list = preUserMapper.selectAll();
+    public PageInfo<PreUser> getUserList(Integer page, Integer row, PreUser user) {
+        List<PreUser> list = preUserMapper.select(user);
         PageHelper.startPage(page, row);
         PageInfo<PreUser> pages = new PageInfo<PreUser>(list);
         return pages;
