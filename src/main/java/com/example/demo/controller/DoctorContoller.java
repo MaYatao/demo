@@ -20,7 +20,7 @@ public class DoctorContoller {
         } catch (Exception e) {
             return Result.build(500, e.getMessage());
         }
-        return Result.ok("修改成功");
+        return Result.ok("添加成功");
     }
 
     @PostMapping("/edit")
