@@ -23,6 +23,10 @@ public class Doctor {
      * 医生姓名
      */
     private String docName;
+    /**
+     * 登陆密码
+     */
+    private String password;
 
     /**
      * 医生级别

@@ -2,6 +2,7 @@ package com.example.demo.service.impl;
 
 import com.example.demo.mapper.DoctorMapper;
 import com.example.demo.pojo.Doctor;
+import com.example.demo.pojo.PreUser;
 import com.example.demo.service.DoctorService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -27,9 +28,20 @@ public class DoctorServiceImpl implements DoctorService {
 
     @Override
     public Doctor login(Doctor doctor) {
-        return null;
+        Doctor u = getUserByName(doctor.getDocName());
+        if (u == null) {
+            throw new RuntimeException("用户名错误");
+        }
+        if (!u.getPassword().equals(doctor.getPassword())) {
+            throw new RuntimeException("密码错误");
+        }
+        return u;
     }
-
+    private Doctor getUserByName(String name) {
+        Doctor doctor = new Doctor();
+        doctor.setDocName(name);
+        return doctorMapper.selectOne(doctor);
+    }
     @Override
     public Doctor getById(Integer docId) {
         return doctorMapper.selectByPrimaryKey(docId);
