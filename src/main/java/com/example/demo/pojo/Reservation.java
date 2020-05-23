@@ -59,7 +59,7 @@ public class Reservation {
      * 0：未取号，1：已取号，2：已过期
      */
     @Column(name = "state")
-    private Integer state;
+    private Integer state=0;
 
 
 }

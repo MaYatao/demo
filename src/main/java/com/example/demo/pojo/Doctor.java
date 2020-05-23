@@ -33,7 +33,7 @@ public class Doctor {
      * 是否专家，默认folse-非专家
      */
     @Column(name = "is_profession")
-    private Boolean profession;
+    private Boolean profession=false;
 
     /**
      * 所属科室
@@ -60,6 +60,6 @@ public class Doctor {
     /**
      * 医生状态，-1作废，，0休假，1正常值班 ，2，管理员
      */
-    private Integer state;
+    private Integer state=1;
 
 }

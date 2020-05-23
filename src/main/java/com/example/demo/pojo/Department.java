@@ -44,6 +44,6 @@ public class Department {
     /**
      * 科室状态，0正常运行，1休整
      */
-    private Integer state;
+    private Integer state=0;
 
 }

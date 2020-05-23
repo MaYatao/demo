@@ -38,7 +38,7 @@ public class PeriodDivision {
     /**
      * 号源状态，0：停诊，1：空闲，2：已被预约
      */
-    private Integer state;
+    private Integer state=1;
 
     /**
      * 所属科室
