@@ -19,6 +19,10 @@ public class PreUserServiceImpl implements PreUserService {
 
     @Override
     public void save(PreUser user) {
+        PreUser u = getUserByName(user.getLoginName());
+        if (u == null) {
+            throw new RuntimeException("用户名重复");
+        }
         preUserMapper.insert(user);
     }
 
@@ -29,7 +33,7 @@ public class PreUserServiceImpl implements PreUserService {
 
     @Override
     public PreUser login(PreUser user) {
-        PreUser u = getUserByName(user.getRealName());
+        PreUser u = getUserByName(user.getLoginName());
         if (u == null) {
             throw new RuntimeException("用户名错误");
         }
@@ -39,9 +43,9 @@ public class PreUserServiceImpl implements PreUserService {
         return u;
     }
 
-    private PreUser getUserByName(String realName) {
+    private PreUser getUserByName(String name) {
         PreUser user = new PreUser();
-        user.setRealName(realName);
+        user.setLoginName(name);
         return preUserMapper.selectOne(user);
     }
 

@@ -19,6 +19,13 @@ public class Doctor {
     @Column(name = "doc_id")
     private Integer docId;
 
+    private Integer age;
+    /**
+     * 1是普通医生，2是拥有管理员的医生
+     */
+    @Column(columnDefinition = "int default 1")
+    private  Integer role;
+
     /**
      * 医生姓名
      */

@@ -25,8 +25,6 @@ public class ReservationServiceImpl implements ReservationService {
     @Autowired
     private DoctorMapper doctorMapper;
 
-    @Autowired
-    private DepartmentMapper departmentMapper;
 
 
     @Override
@@ -37,6 +35,7 @@ public class ReservationServiceImpl implements ReservationService {
         for (Reservation reservation: list) {
             ReservationResult reservationResult=new ReservationResult();
             reservationResult.setDoct_id(reservation.getDoct_id());
+            reservationResult.setResId(reservation.getResId());
             reservationResult.setDoctName(doctorMapper.selectByPrimaryKey(reservation.getDoct_id()).getDocName());
             reservationResult.setEndTime(reservation.getEndTime());
             reservationResult.setOpecraDate(reservation.getOpecraDate());

@@ -54,7 +54,7 @@ public class DoctorContoller {
         }
     }
 
-    @DeleteMapping("/{docId}")
+     @GetMapping("/delete/{docId}")
     public Result deleteById(@PathVariable(name = "docId", required = true) Integer docId) {
         try {
             doctorService.deleteById(docId);

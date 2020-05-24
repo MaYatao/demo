@@ -21,6 +21,11 @@ public class PreUser {
     @Column(name = "user_id")
     private Integer userId;
 
+    private Integer age;
+    //用户权限 0
+    @Column(columnDefinition = "int default 0")
+    private Integer role;
+
     /**
      * 昵称
      */

@@ -60,7 +60,7 @@ public class PreUserController {
         }
     }
 
-    @DeleteMapping("/{userId}")
+     @GetMapping("/delete/{userId}")
     public Result deleteById(@PathVariable(name = "userId", required = true) Integer userId) {
         try {
             preUserService.deleteById(userId);
