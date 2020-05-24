@@ -1,4 +1,4 @@
-package com.example.demo.pojo;
+package com.example.demo.bean;
 
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;

@@ -1,7 +1,7 @@
 package com.example.demo.service;
 
 
-import com.example.demo.pojo.Doctor;
+import com.example.demo.bean.Doctor;
 import com.github.pagehelper.PageInfo;
 
 public interface DoctorService {

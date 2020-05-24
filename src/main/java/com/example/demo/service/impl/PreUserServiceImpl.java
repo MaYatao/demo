@@ -2,7 +2,7 @@ package com.example.demo.service.impl;
 
 
 import com.example.demo.mapper.PreUserMapper;
-import com.example.demo.pojo.PreUser;
+import com.example.demo.bean.PreUser;
 import com.example.demo.service.PreUserService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;

@@ -1,8 +1,7 @@
 package com.example.demo.service.impl;
 
 import com.example.demo.mapper.DoctorMapper;
-import com.example.demo.pojo.Doctor;
-import com.example.demo.pojo.PreUser;
+import com.example.demo.bean.Doctor;
 import com.example.demo.service.DoctorService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;

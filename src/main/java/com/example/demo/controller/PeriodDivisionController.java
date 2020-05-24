@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
-import com.example.demo.pojo.PeriodDivision;
+import com.example.demo.bean.PeriodDivision;
+import com.example.demo.pojo.PeriodDivisionResult;
 import com.example.demo.service.PeriodDivisionService;
 import com.example.demo.until.Result;
 import com.github.pagehelper.PageInfo;
@@ -37,7 +38,7 @@ public class PeriodDivisionController {
     @ResponseBody
     public Result getDeptList(@RequestParam(defaultValue = "1") Integer page, @RequestParam(defaultValue = "10")Integer row, PeriodDivision periodDivision) {
         try {
-            PageInfo<PeriodDivision> doctorList = periodDivisionService.getPDtList(page, row, periodDivision);
+            PageInfo<PeriodDivisionResult> doctorList = periodDivisionService.getPDtList(page, row, periodDivision);
             return Result.ok(doctorList);
         } catch (Exception e) {
             return Result.build(500, e.getMessage());
@@ -47,7 +48,7 @@ public class PeriodDivisionController {
     @GetMapping("/get/{pdId}")
     public Result getById(@PathVariable(name = "pdId", required = true) Integer pdId) {
         try {
-            PeriodDivision periodDivision = periodDivisionService.getById(pdId);
+            PeriodDivisionResult periodDivision = periodDivisionService.getById(pdId);
             return Result.ok(periodDivision);
         } catch (Exception e) {
             return Result.build(500, e.getMessage());

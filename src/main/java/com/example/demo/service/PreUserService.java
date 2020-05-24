@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-import com.example.demo.pojo.PreUser;
+import com.example.demo.bean.PreUser;
 import com.github.pagehelper.PageInfo;
 
 public interface PreUserService {

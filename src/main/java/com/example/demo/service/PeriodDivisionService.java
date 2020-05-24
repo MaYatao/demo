@@ -1,12 +1,13 @@
 package com.example.demo.service;
 
-import com.example.demo.pojo.PeriodDivision;
+import com.example.demo.bean.PeriodDivision;
+import com.example.demo.pojo.PeriodDivisionResult;
 import com.github.pagehelper.PageInfo;
 
 public interface PeriodDivisionService {
-    PeriodDivision getById(Integer pdId);
+    PeriodDivisionResult getById(Integer pdId);
 
-    PageInfo<PeriodDivision> getPDtList(Integer page, Integer row, PeriodDivision periodDivision);
+    PageInfo<PeriodDivisionResult> getPDtList(Integer page, Integer row, PeriodDivision periodDivision);
 
     void edit(PeriodDivision periodDivision);
 

@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.pojo.Department;
+import com.example.demo.bean.Department;
 import com.example.demo.service.DepartmentService;
 import com.example.demo.until.Result;
 import com.github.pagehelper.PageInfo;

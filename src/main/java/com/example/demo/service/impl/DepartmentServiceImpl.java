@@ -1,7 +1,7 @@
 package com.example.demo.service.impl;
 
 import com.example.demo.mapper.DepartmentMapper;
-import com.example.demo.pojo.Department;
+import com.example.demo.bean.Department;
 import com.example.demo.service.DepartmentService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;

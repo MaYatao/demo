@@ -1,12 +1,13 @@
 package com.example.demo.service;
 
-import com.example.demo.pojo.Reservation;
+import com.example.demo.bean.Reservation;
+import com.example.demo.pojo.ReservationResult;
 import com.github.pagehelper.PageInfo;
 
 public interface ReservationService {
-    PageInfo<Reservation> getDeptList(Integer page, Integer row, Reservation reservation);
+    PageInfo<ReservationResult> getDeptList(Integer page, Integer row, Reservation reservation);
 
-    Reservation getById(Integer resId);
+    ReservationResult getById(Integer resId);
 
     void edit(Reservation reservation);
 

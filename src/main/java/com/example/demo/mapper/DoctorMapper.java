@@ -1,6 +1,6 @@
 package com.example.demo.mapper;
 
-import com.example.demo.pojo.Doctor;
+import com.example.demo.bean.Doctor;
 import tk.mybatis.mapper.common.Mapper;
 
 @org.apache.ibatis.annotations.Mapper

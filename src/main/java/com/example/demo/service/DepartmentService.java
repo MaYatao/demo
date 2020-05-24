@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-import com.example.demo.pojo.Department;
+import com.example.demo.bean.Department;
 import com.github.pagehelper.PageInfo;
 
 public interface DepartmentService {

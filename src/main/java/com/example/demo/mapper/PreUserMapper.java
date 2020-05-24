@@ -1,6 +1,6 @@
 package com.example.demo.mapper;
 
-import com.example.demo.pojo.PreUser;
+import com.example.demo.bean.PreUser;
 import tk.mybatis.mapper.common.Mapper;
 
 

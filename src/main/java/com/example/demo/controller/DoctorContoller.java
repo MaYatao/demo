@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.pojo.Doctor;
+import com.example.demo.bean.Doctor;
 import com.example.demo.service.DoctorService;
 import com.example.demo.until.Result;
 import com.github.pagehelper.PageInfo;

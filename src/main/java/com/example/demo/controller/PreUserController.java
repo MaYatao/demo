@@ -1,11 +1,10 @@
 package com.example.demo.controller;
 
 
-import com.example.demo.pojo.PreUser;
+import com.example.demo.bean.PreUser;
 import com.example.demo.service.PreUserService;
 import com.example.demo.until.Result;
 import com.github.pagehelper.PageInfo;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

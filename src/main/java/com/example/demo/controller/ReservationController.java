@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
-import com.example.demo.pojo.Reservation;
+import com.example.demo.bean.Reservation;
+import com.example.demo.pojo.ReservationResult;
 import com.example.demo.service.ReservationService;
 import com.example.demo.until.Result;
 import com.github.pagehelper.PageInfo;
@@ -33,26 +34,35 @@ public class ReservationController {
         return Result.ok("修改成功");
     }
 
+    /**
+     *
+     * @param page
+     * @param row
+     * @param reservation  用户id，医生id都可以
+     * @return
+     */
     @RequestMapping(value = "/getDeptList", method = RequestMethod.POST)
     @ResponseBody
     public Result getDeptList(@RequestParam(defaultValue = "1") Integer page, @RequestParam(defaultValue = "10")Integer row, Reservation reservation) {
         try {
-            PageInfo<Reservation> doctorList = reservationService.getDeptList(page, row, reservation);
+            PageInfo<ReservationResult> doctorList = reservationService.getDeptList(page, row, reservation);
             return Result.ok(doctorList);
         } catch (Exception e) {
             return Result.build(500, e.getMessage());
         }
     }
 
+
     @GetMapping("/get/{resId}")
     public Result getById(@PathVariable(name = "resId", required = true) Integer resId) {
         try {
-            Reservation reservation = reservationService.getById(resId);
+            ReservationResult reservation = reservationService.getById(resId);
             return Result.ok(reservation);
         } catch (Exception e) {
             return Result.build(500, e.getMessage());
         }
     }
+
 
 
 }
