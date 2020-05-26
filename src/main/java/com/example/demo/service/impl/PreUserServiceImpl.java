@@ -1,13 +1,14 @@
 package com.example.demo.service.impl;
 
 
-import com.example.demo.mapper.PreUserMapper;
 import com.example.demo.bean.PreUser;
+import com.example.demo.mapper.PreUserMapper;
 import com.example.demo.service.PreUserService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.DigestUtils;
 
 import java.util.List;
 
@@ -23,6 +24,8 @@ public class PreUserServiceImpl implements PreUserService {
         if (u == null) {
             throw new RuntimeException("用户名重复");
         }
+        String md5Password = DigestUtils.md5DigestAsHex(user.getPassword().getBytes());
+        user.setPassword(md5Password);
         preUserMapper.insert(user);
     }
 
@@ -37,7 +40,8 @@ public class PreUserServiceImpl implements PreUserService {
         if (u == null) {
             throw new RuntimeException("用户名错误");
         }
-        if (!u.getPassword().equals(user.getPassword())) {
+        String md5Password = DigestUtils.md5DigestAsHex(user.getPassword().getBytes());
+        if (!u.getPassword().equals(md5Password) ){
             throw new RuntimeException("密码错误");
         }
         return u;

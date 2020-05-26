@@ -2,13 +2,12 @@ package com.example.demo.controller;
 
 import com.example.demo.bean.Admin;
 import com.example.demo.service.AdminService;
-
 import com.example.demo.until.Result;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
+import javax.servlet.http.HttpSession;
 
 @RequestMapping("admin")
 @RestController
@@ -39,10 +38,10 @@ public class AdminController {
     }
 
     @PostMapping("/login")
-    public Result login(Admin admin) {
+    public Result login(Admin admin, HttpSession session) {
         try {
             Admin u = adminService.login(admin);
-            u.setPassword("");
+            session.setAttribute("admin",admin);
             return Result.build(200, "登陆成功", u);
         } catch (Exception e) {
             return Result.build(500, e.getMessage());

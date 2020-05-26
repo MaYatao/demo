@@ -1,22 +1,26 @@
 package com.example.demo.service.impl;
 
-import com.example.demo.mapper.DoctorMapper;
 import com.example.demo.bean.Doctor;
+import com.example.demo.mapper.DoctorMapper;
 import com.example.demo.service.DoctorService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.DigestUtils;
 
 import java.util.List;
 
 @Service
 public class DoctorServiceImpl implements DoctorService {
+
     @Autowired
     private DoctorMapper doctorMapper;
 
     @Override
     public void save(Doctor doctor) {
+        String md5Password = DigestUtils.md5DigestAsHex(doctor.getPassword().getBytes());
+        doctor.setPassword(md5Password);
         doctorMapper.insert(doctor);
     }
 
@@ -31,7 +35,9 @@ public class DoctorServiceImpl implements DoctorService {
         if (u == null) {
             throw new RuntimeException("用户名错误");
         }
-        if (!u.getPassword().equals(doctor.getPassword())) {
+        String md5Password = DigestUtils.md5DigestAsHex(doctor.getPassword().getBytes());
+
+        if (!u.getPassword().equals(md5Password)) {
             throw new RuntimeException("密码错误");
         }
         return u;
