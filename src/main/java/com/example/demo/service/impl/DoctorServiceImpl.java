@@ -17,34 +17,16 @@ public class DoctorServiceImpl implements DoctorService {
     @Autowired
     private DoctorMapper doctorMapper;
 
-    @Override
-    public void save(Doctor doctor) {
-        String md5Password = DigestUtils.md5DigestAsHex(doctor.getPassword().getBytes());
-        doctor.setPassword(md5Password);
-        doctorMapper.insert(doctor);
-    }
 
     @Override
     public void edit(Doctor doctor) {
         doctorMapper.updateByPrimaryKeySelective(doctor);
     }
 
-    @Override
-    public Doctor login(Doctor doctor) {
-        Doctor u = getUserByName(doctor.getDocName());
-        if (u == null) {
-            throw new RuntimeException("用户名错误");
-        }
-        String md5Password = DigestUtils.md5DigestAsHex(doctor.getPassword().getBytes());
 
-        if (!u.getPassword().equals(md5Password)) {
-            throw new RuntimeException("密码错误");
-        }
-        return u;
-    }
     private Doctor getUserByName(String name) {
         Doctor doctor = new Doctor();
-        doctor.setDocName(name);
+        doctor.setName(name);
         return doctorMapper.selectOne(doctor);
     }
     @Override

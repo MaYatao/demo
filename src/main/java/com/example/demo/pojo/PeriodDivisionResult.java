@@ -16,8 +16,7 @@ public class PeriodDivisionResult {
      * 那一天
      */
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date day;
+    private String day;
 
     /**
      * 哪个时间段，'09:00-10:00
@@ -25,6 +24,7 @@ public class PeriodDivisionResult {
     @Column(name = "time_div")
     private String timeDiv;
 
+    private String stage;
 
     /**
      * 号源状态，0：停诊，1：空闲，2：已被预约
@@ -39,11 +39,10 @@ public class PeriodDivisionResult {
     /**
      * 对应的医生
      */
-    private Integer doctId;
+    private Integer doctorId;
     private String doctName;
     /**
      * 修改时间
      */
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private Date modTime;
+    private String modTime;
 }

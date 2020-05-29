@@ -16,8 +16,8 @@ public class Doctor {
      */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "doc_id")
-    private Integer docId;
+    @Column(name = "docor_id")
+    private Integer doctorId;
 
     private Integer age;
     /**
@@ -29,11 +29,8 @@ public class Doctor {
     /**
      * 医生姓名
      */
-    private String docName;
-    /**
-     * 登陆密码
-     */
-    private String password;
+    private String  name;
+
 
     /**
      * 医生级别

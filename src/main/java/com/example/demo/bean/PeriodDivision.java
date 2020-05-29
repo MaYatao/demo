@@ -25,14 +25,18 @@ public class PeriodDivision {
      * 那一天
      */
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date day;
+    private String day;
 
     /**
      * 哪个时间段，'09:00-10:00
      */
     @Column(name = "time_div")
     private String timeDiv;
+
+    /**
+     * 哪个时间段，'09:00-10:00
+     */
+    private String stage; //上下午，值只有am,pm
 
 
     /**
@@ -48,12 +52,11 @@ public class PeriodDivision {
     /**
      * 对应的医生
      */
-    private Integer doctId;
+    private Integer doctorId;
     /**
      * 修改时间
      */
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private Date modTime;
+    private String modTime;
 
 
 }

@@ -10,39 +10,18 @@ import java.util.Date;
  * 预约患者类
  */
 @Data
-@Table(name = "tb_user")
+@Table(name = "tb_preuser")
 @Entity
-public class PreUser {
+public class Patient {
     /**
      * 患者主键ID自增
      */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id")
-    private Integer userId;
+    @Column(name = "patient_id")
+    private Integer patientId;
 
     private Integer age;
-    //用户权限 0
-    @Column(columnDefinition = "int default 0")
-    private Integer role;
-
-    /**
-     * 昵称
-     */
-    @Column(name = "login_name")
-    private String loginName;
-
-    /**
-     * 真实姓名
-     */
-    @Column(name = "real_name")
-    private String realName;
-
-    /**
-     * 登陆密码
-     */
-    private String password;
-
     /**
      * 患者email
      */
@@ -63,12 +42,12 @@ public class PreUser {
      */
     private String card;
 
+    private String name;
     /**
      * 注册日期
      */
     @Column(name = "reg_date")
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private Date regDate;
+    private String regDate;
 
     /**
      * 患者状态

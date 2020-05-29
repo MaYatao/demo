@@ -1,11 +1,9 @@
 package com.example.demo.service.impl;
 
-import com.example.demo.bean.PreUser;
 import com.example.demo.mapper.DepartmentMapper;
 import com.example.demo.mapper.DoctorMapper;
 import com.example.demo.mapper.PeriodDivisionMapper;
 import com.example.demo.bean.PeriodDivision;
-import com.example.demo.mapper.PreUserMapper;
 import com.example.demo.pojo.PeriodDivisionResult;
 import com.example.demo.service.PeriodDivisionService;
 import com.github.pagehelper.PageHelper;
@@ -33,8 +31,8 @@ public class PeriodDivisionServiceImpl implements PeriodDivisionService {
         periodDivisionResult.setDay(periodDivision.getDay());
         periodDivisionResult.setDeptId(periodDivision.getDeptId());
         periodDivisionResult.setDeptName(departmentMapper.selectByPrimaryKey(periodDivision.getDeptId()).getDeptName());
-        periodDivisionResult.setDoctId(periodDivision.getDoctId());
-        periodDivisionResult.setDoctName(doctorMapper.selectByPrimaryKey(periodDivision.getDoctId()).getDocName());
+        periodDivisionResult.setDoctorId(periodDivision.getDoctorId());
+        periodDivisionResult.setDoctName(doctorMapper.selectByPrimaryKey(periodDivision.getDoctorId()).getName());
         periodDivisionResult.setModTime(periodDivision.getModTime());
         periodDivisionResult.setState(periodDivision.getState());
         periodDivisionResult.setTimeDiv(periodDivision.getTimeDiv());
@@ -50,8 +48,8 @@ public class PeriodDivisionServiceImpl implements PeriodDivisionService {
             periodDivisionResult.setDay(periodDivision.getDay());
             periodDivisionResult.setDeptId(periodDivision.getDeptId());
             periodDivisionResult.setDeptName(departmentMapper.selectByPrimaryKey(periodDivision.getDeptId()).getDeptName());
-            periodDivisionResult.setDoctId(periodDivision.getDoctId());
-            periodDivisionResult.setDoctName(doctorMapper.selectByPrimaryKey(periodDivision.getDoctId()).getDocName());
+            periodDivisionResult.setDoctorId(periodDivision.getDoctorId());
+            periodDivisionResult.setDoctName(doctorMapper.selectByPrimaryKey(periodDivision.getDoctorId()).getName());
             periodDivisionResult.setModTime(periodDivision.getModTime());
             periodDivisionResult.setState(periodDivision.getState());
             periodDivisionResult.setTimeDiv(periodDivision.getTimeDiv());

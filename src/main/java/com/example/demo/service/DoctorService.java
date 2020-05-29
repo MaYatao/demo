@@ -6,11 +6,9 @@ import com.github.pagehelper.PageInfo;
 
 public interface DoctorService {
 
-    void save(Doctor doctor);
 
     void edit(Doctor doctor);
 
-    Doctor login(Doctor doctor);
 
     Doctor getById(Integer docId);
 

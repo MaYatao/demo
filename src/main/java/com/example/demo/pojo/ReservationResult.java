@@ -14,26 +14,23 @@ public class ReservationResult {
     /**
      * 预约操作日期
      */
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private Date opecraDate;
+    private String opecraDate;
 
     /**
      * 预约就诊日期
      */
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private Date startTime;
+    private String startTime;
     /**
      * 预约就诊日期
      */
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private Date endTime;
+    private String endTime;
 
 
     /**
      * 预约患者
      */
-    private Integer userId;
-    private String realname;
+    private Integer patientId;
+    private String pname;
 
     /**
      * 编号信息
@@ -42,8 +39,8 @@ public class ReservationResult {
     private Integer pdId;
 
 
-    private Integer doct_id;
-    private String doctName;
+    private Integer doctorId;
+    private String  doctName;
     /**
      * 0：未取号，1：已取号，2：已过期
      */

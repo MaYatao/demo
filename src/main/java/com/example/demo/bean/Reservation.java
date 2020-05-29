@@ -26,28 +26,26 @@ public class Reservation {
      * 预约操作日期
      */
     @Column(name = "opecra_date")
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private Date opecraDate;
+    private String opecraDate;
 
     /**
      * 预约就诊日期
      */
     @Column(name = "start_time")
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private Date startTime;
+    private String startTime;
     /**
      * 预约就诊日期
      */
     @Column(name = "end_time")
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private Date endTime;
+    private String endTime;
 
+    private String stage; //上下午，值只有am,pm
 
     /**
      * 预约患者
      */
     @Column(name = "user_id")
-    private Integer userId;
+    private Integer patientId;
 
     /**
      * 编号信息
@@ -59,7 +57,7 @@ public class Reservation {
      * 编号信息
      */
     @Column(name = "doct_id")
-    private Integer doct_id;
+    private Integer doctorId;
     /**
      * 0：未取号，1：已取号，2：已过期
      */

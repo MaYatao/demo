@@ -13,7 +13,7 @@ public class DoctorContoller {
     @Autowired
     private DoctorService doctorService;
 
-    @PostMapping("/save")
+/*    @PostMapping("/save")
     public Result save(Doctor doctor) {
         try {
             doctorService.save(doctor);
@@ -21,7 +21,7 @@ public class DoctorContoller {
             return Result.build(500, e.getMessage());
         }
         return Result.ok("添加成功");
-    }
+    }*/
 
     @PostMapping("/edit")
     public Result edit(Doctor doctor) {
@@ -34,15 +34,6 @@ public class DoctorContoller {
 
     }
 
-    @PostMapping("/login")
-    public Result login(Doctor doctor) {
-        try {
-            Doctor u = doctorService.login(doctor);
-            return Result.build(200, "登陆成功", u);
-        } catch (Exception e) {
-            return Result.build(500, e.getMessage());
-        }
-    }
 
     @GetMapping("/get/{docId}")
     public Result getById(@PathVariable(name = "docId", required = true) Integer docId) {
