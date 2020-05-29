@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.text.DateFormat;
 import java.util.Date;
 
-@RequestMapping("preuser")
+@RequestMapping("patient")
 @RestController
 public class PatientController {
 
